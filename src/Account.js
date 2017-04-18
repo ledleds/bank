@@ -3,9 +3,13 @@
 (function(exports) {
 
   function Account() {
-    this.balance = 0
+    this.balance = 0;
   }
 
-    exports.Account = Account;
+  Account.prototype.showBalance = function () {
+    return this.balance;
+  };
+
+  exports.Account = Account;
 
 })(this);

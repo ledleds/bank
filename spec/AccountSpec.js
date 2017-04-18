@@ -4,7 +4,13 @@ describe("Account", function() {
     account = new Account();
   });
 
-  it("should begin with no balance", function() {
-    expect(account.balance).toEqual(0);
+  describe("balance", function() {
+    it("should begin with no balance", function() {
+      expect(account.balance).toEqual(0);
+    });
+
+    it("should display the balance", function() {
+      expect(account.showBalance()).toEqual(0);
+    });
   });
 });
