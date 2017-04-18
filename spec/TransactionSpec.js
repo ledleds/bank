@@ -10,4 +10,8 @@ var transaction;
   it("takes a credit amount", function(){
     expect(transaction.creditAmount).toEqual(100);
   });
+
+  it("takes a debit amount", function(){
+    expect(transaction.debitAmount).toEqual(null);
+  });
 });
