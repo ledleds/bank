@@ -14,4 +14,8 @@ var transaction;
   it("takes a debit amount", function(){
     expect(transaction.debitAmount).toEqual(null);
   });
+
+  it("takes the account balance", function(){
+    expect(transaction.balance).toEqual(100);
+  });
 });
