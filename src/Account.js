@@ -17,6 +17,7 @@
   Account.prototype.withdraw = function(amount) {
     this.balance -= amount;
   };
+
   exports.Account = Account;
 
 })(this);

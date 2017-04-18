@@ -1,10 +1,14 @@
+"strict mode";
+
 describe("Account", function() {
+  var account;
 
   beforeEach(function() {
     account = new Account();
   });
 
   describe("balance", function() {
+
     it("should begin with no balance", function() {
       expect(account.balance).toEqual(0);
     });
@@ -15,6 +19,7 @@ describe("Account", function() {
   });
 
   describe("deposit", function() {
+
     it("should be able to make a first deposit", function() {
       account.deposit(100);
       expect(account.showBalance()).toEqual(100);
