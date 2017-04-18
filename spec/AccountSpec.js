@@ -27,4 +27,22 @@ describe("Account", function() {
       expect(account.showBalance()).toEqual(110);
     });
   });
+
+  describe("withdrawal", function() {
+
+    beforeEach(function() {
+      account.deposit(100);
+    });
+
+    it("should be able to make a withdrawal", function() {
+      account.withdraw(20);
+      expect(account.showBalance()).toEqual(80);
+    });
+
+    it("should be able to make many withdrawals", function() {
+      account.withdraw(10);
+      account.withdraw(60);
+      expect(account.showBalance()).toEqual(30);
+    });
+  });
 });
