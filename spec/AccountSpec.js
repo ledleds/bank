@@ -15,6 +15,10 @@ describe("Account", function() {
     expect(account.transactionHistory).toEqual(jasmine.any(TransactionHistory));
   });
 
+  it("is instantiated with the Statement class by default", function() {
+    expect(account.statement).toEqual(jasmine.any(Statement));
+  });
+
   describe("showBalance", function() {
     it("should display the balance", function() {
       expect(account.showBalance()).toEqual(0);

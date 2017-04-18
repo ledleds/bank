@@ -2,9 +2,10 @@
 
 (function(exports) {
 
-  function Account() {
+  function Account(statement = new Statement()) {
     this.balance = 0;
     this.transactionHistory = new TransactionHistory();
+    this.statement = statement;
   }
 
   Account.prototype.showBalance = function() {

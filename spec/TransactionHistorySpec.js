@@ -1,7 +1,7 @@
 "strict mode";
 
 describe("TransactionHistory", function() {
-  
+
 var transactionHistory;
 
   beforeEach(function() {
@@ -11,5 +11,4 @@ var transactionHistory;
   it("has an empty transactions array to begin", function() {
     expect(transactionHistory.transactions).toEqual([]);
   });
-
 });
