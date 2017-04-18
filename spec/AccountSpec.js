@@ -11,8 +11,8 @@ describe("Account", function() {
     expect(account.balance).toEqual(0);
   });
 
-  it("creates a new instance  of Transaction History class", function() {
-    expect(account.transactionHistory).toEqual(jasmine.any(TransactionHistory));//to have an instance of TransactionHistory
+  it("creates a new instance of Transaction History class", function() {
+    expect(account.transactionHistory).toEqual(jasmine.any(TransactionHistory));
   });
 
   describe("showBalance", function() {
@@ -58,6 +58,11 @@ describe("Account", function() {
       account.withdraw(10);
       account.withdraw(60);
       expect(account.showBalance()).toEqual(30);
+    });
+
+    it("should add a new transaction to transactions array", function() {
+      account.withdraw(20);
+      expect(account.transactionHistory.transactions.length).toEqual(2);
     });
   });
 });

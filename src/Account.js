@@ -19,6 +19,8 @@
 
   Account.prototype.withdraw = function(amount) {
     this.balance -= amount;
+    transaction = new Transaction(null, amount, this.balance);
+    this.transactionHistory.transactions.push(transaction);
   };
 
   exports.Account = Account;
