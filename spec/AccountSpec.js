@@ -7,12 +7,15 @@ describe("Account", function() {
     account = new Account();
   });
 
-  describe("balance", function() {
+  it("should begin with no balance", function() {
+    expect(account.balance).toEqual(0);
+  });
 
-    it("should begin with no balance", function() {
-      expect(account.balance).toEqual(0);
-    });
+  it("creates a new instance  of Transaction History class", function() {
+    expect(account.transactionHistory).toEqual(jasmine.any(TransactionHistory));//to have an instance of TransactionHistory
+  });
 
+  describe("showBalance", function() {
     it("should display the balance", function() {
       expect(account.showBalance()).toEqual(0);
     });
@@ -31,6 +34,11 @@ describe("Account", function() {
       account.deposit(40);
       expect(account.showBalance()).toEqual(110);
     });
+
+    // it("should create a new transaction", function() {
+    //   account.deposit(100);
+    //   // expect(account.transactionHistory.transactions).toEqual());
+    // });
   });
 
   describe("withdrawal", function() {
