@@ -13,4 +13,18 @@ describe("Account", function() {
       expect(account.showBalance()).toEqual(0);
     });
   });
+
+  describe("deposit", function() {
+    it("should be able to make a first deposit", function() {
+      account.deposit(100);
+      expect(account.showBalance()).toEqual(100);
+    });
+
+    it("should be able to make many deposits", function() {
+      account.deposit(10);
+      account.deposit(60);
+      account.deposit(40);
+      expect(account.showBalance()).toEqual(110);
+    });
+  });
 });
