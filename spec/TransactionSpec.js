@@ -3,8 +3,13 @@
 describe("Transaction", function() {
 var transaction;
 
-  beforeEach(function () {
+  beforeEach(function() {
     transaction = new Transaction(100, null, 100);
+  });
+
+  it("adds todays date", function(){
+    expect(transaction.date).toEqual(jasmine.any(Date));
+    // emits to jasmine.any(FakeDate)
   });
 
   it("takes a credit amount", function(){
