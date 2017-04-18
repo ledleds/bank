@@ -23,22 +23,24 @@ describe("Account", function() {
 
   describe("deposit", function() {
 
-    it("should be able to make a first deposit", function() {
+    beforeEach(function() {
       account.deposit(100);
+    });
+
+    it("should be able to make a first deposit", function() {
       expect(account.showBalance()).toEqual(100);
     });
 
     it("should be able to make many deposits", function() {
-      account.deposit(10);
       account.deposit(60);
       account.deposit(40);
-      expect(account.showBalance()).toEqual(110);
+      expect(account.showBalance()).toEqual(200);
     });
 
-    // it("should create a new transaction", function() {
-    //   account.deposit(100);
-    //   // expect(account.transactionHistory.transactions).toEqual());
-    // });
+    it("should add a new transaction to transactions array", function() {
+      account.deposit(20);
+      expect(account.transactionHistory.transactions.length).toEqual(2);
+    });
   });
 
   describe("withdrawal", function() {

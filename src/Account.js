@@ -13,7 +13,8 @@
 
   Account.prototype.deposit = function(amount) {
     this.balance += amount;
-    // transaction = new Transaction(amount, null, this.balance);
+    transaction = new Transaction(amount, null, this.balance);
+    this.transactionHistory.transactions.push(transaction);
   };
 
   Account.prototype.withdraw = function(amount) {
